@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Navbar } from './Navbar';
 import Counter from './Counter';
-import Footer from './Footer';
+import Footer from "./Footer";
 import Image from 'next/image';
 
 const HeroSection = () => {
@@ -209,8 +209,8 @@ const HeroSection = () => {
                         </motion.div>
                     </div>
                 </div>
+                <Footer />
             </div>
-            <Footer />
         </div>
     );
 };
