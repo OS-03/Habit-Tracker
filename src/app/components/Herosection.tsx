@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Navbar } from './Navbar';
 import Counter from './Counter';
 import Footer from './Footer';
+import Image from 'next/image';
 
 const HeroSection = () => {
     const fadeIn = {
@@ -23,14 +24,14 @@ const HeroSection = () => {
             <Navbar />
             <div className="absolute inset-0 -z-10 h-full w-full bg-transparent [background:radial-gradient(125%_125%_at_50%_10%,transparent_40%,#63e_100%)]">
                 <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center pb-20 text-justify">
-                    <motion.h1 
+                    <motion.h1
                         {...fadeIn}
                         className="py-5 mt-31 text-3xl text:md md:text-5xl font-bold tracking-tight text-gray-800 mb-6 font-['Poppins']"
                     >
                         Track Your Daily <span className="text-purple-400">Habits</span>
                     </motion.h1>
-                
-                    <motion.p 
+
+                    <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.6 }}
@@ -41,22 +42,22 @@ const HeroSection = () => {
                         you establish and maintain positive routines that lead to lasting change.
                     </motion.p>
 
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
                         className="w-full mb-3"
                     >
-                        <Counter/>
+                        <Counter />
                     </motion.div>
-                    
-                    <motion.div 
+
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6, duration: 0.6 }}
                         className="flex flex-wrap justify-center gap-4 mb-3"
                     >
-                        <motion.button 
+                        <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => document.getElementById('getStartedModal')?.classList.remove('hidden')}
@@ -64,7 +65,7 @@ const HeroSection = () => {
                         >
                             Get Started
                         </motion.button>
-                        <motion.button 
+                        <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             onClick={() => document.getElementById('learnMoreModal')?.classList.remove('hidden')}
@@ -76,8 +77,8 @@ const HeroSection = () => {
                 </div>
 
                 {/* Modals with Framer Motion */}
-                <motion.div 
-                    id="getStartedModal" 
+                <motion.div
+                    id="getStartedModal"
                     className="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
                     variants={modalVariants}
                     initial="hidden"
@@ -87,7 +88,7 @@ const HeroSection = () => {
                         <h2 className="text-2xl font-bold mb-4 font-['Poppins']">Get Started</h2>
                         <p className="mb-4 font-['Poppins']">Ready to begin your journey? Create an account or sign in to start tracking your habits!</p>
                         <div className="flex justify-end">
-                            <motion.button 
+                            <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => document.getElementById('getStartedModal')?.classList.add('hidden')}
@@ -99,8 +100,8 @@ const HeroSection = () => {
                     </div>
                 </motion.div>
 
-                <motion.div 
-                    id="learnMoreModal" 
+                <motion.div
+                    id="learnMoreModal"
                     className="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
                     variants={modalVariants}
                     initial="hidden"
@@ -110,7 +111,7 @@ const HeroSection = () => {
                         <h2 className="text-2xl font-bold mb-4 font-['Poppins']">Learn More</h2>
                         <p className="mb-4 font-['Poppins']">Our habit tracking system helps you build lasting habits through consistent tracking and insights. Start small, stay consistent, and watch your progress grow!</p>
                         <div className="flex justify-end">
-                            <motion.button 
+                            <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => document.getElementById('learnMoreModal')?.classList.add('hidden')}
@@ -177,10 +178,12 @@ const HeroSection = () => {
                                 className="bg-white pt-5 rounded-lg shadow-lg max-w-sm text-center"
                             >
                                 <div className="w-full h-48 overflow-hidden rounded-t-lg">
-                                    <img
+                                    <Image
                                         src={testimonial.image}
                                         alt={testimonial.name}
-                                        className="w-full h-full object-cover object-center-right transform transition-transform duration-300 hover:scale-105 cursor-pointer" 
+                                        width={500} // Set appropriate width
+                                        height={300} // Set appropriate height
+                                        className="w-full h-full object-cover object-center-right transform transition-transform duration-300 hover:scale-105 cursor-pointer"
                                     />
                                 </div>
                                 <div className="relative bg-gradient-to-tr from-purple-100 via-purple-200 to-purple-300 p-4 rounded-b-lg border-t border-purple-600">
@@ -201,7 +204,7 @@ const HeroSection = () => {
                             className="w-full text-center mt-7 px-3 bg-purple-100 py-5 rounded-lg"
                         >
                             <h3 className="text-xl md:text-2xl font-semibold text-gray-700 font-['Poppins']">
-                                "Consistency is the key to success – Start your journey today!"
+                            &quot;Consistency is the key to success - Start your journey today!&quot;
                             </h3>
                         </motion.div>
                     </div>
