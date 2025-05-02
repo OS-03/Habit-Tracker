@@ -149,7 +149,7 @@ export const Navbar: React.FC = () => {
                                 type="submit"
                                 className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-700 transition-all duration-200"
                             >
-                                Today's Entry
+                                Today&apos;s Entry
                             </button>
                         </form>
                     </div>

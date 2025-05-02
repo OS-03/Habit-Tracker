@@ -1,5 +1,4 @@
 
-import Footer from "./components/Footer";
 import HeroSection from "./components/Herosection";
 
 

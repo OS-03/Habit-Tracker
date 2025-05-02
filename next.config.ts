@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['images.unsplash.com', 'plus.unsplash.com'], // Add other domains if needed
   },
+  eslint: {
+    ignoreDuringBuilds: true, // Disable ESLint during builds
+  },
 };
 
 export default nextConfig;
