@@ -143,6 +143,7 @@ export const Navbar: React.FC = () => {
                                 placeholder="Enter completed count"
                                 className="border border-gray-300 rounded px-4 py-2"
                                 min="0"
+                                max={100}
                                 required
                             />
                             <button
@@ -226,6 +227,7 @@ export const Navbar: React.FC = () => {
                                     placeholder="Enter streak count"
                                     className="border border-gray-300 rounded px-4 py-2"
                                     min="0"
+                                    max="100"
                                     required
                                 />
                                 <select
